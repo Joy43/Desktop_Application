@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import { Home, List, Layers, Settings, LogOut } from 'lucide-react'
+import { Home, List, Layers, Settings, LogOut, LogInIcon, ActivityIcon } from 'lucide-react'
 
 const ServerSidebar = () => {
   const location = useLocation()
@@ -8,7 +8,8 @@ const ServerSidebar = () => {
     { id: 'dashboard', icon: Home, label: 'Dashboard', path: '/' },
     { id: 'list', icon: List, label: 'List', path: '/list' },
     { id: 'layers', icon: Layers, label: 'Layers', path: '/layers' },
-    { id: 'settings', icon: Settings, label: 'Settings', path: '/settings' }
+    { id: 'settings', icon: Settings, label: 'Settings', path: '/settings' },
+    { id: 'login', icon: ActivityIcon, label: 'login', path: '/auth/login' }
   ]
 
   return (
@@ -69,4 +70,4 @@ const ServerSidebar = () => {
   )
 }
 
-export default ServerSidebar;
+export default ServerSidebar
