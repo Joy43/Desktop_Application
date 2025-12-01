@@ -22,7 +22,7 @@ const GoogleAuthButton = ({ onSuccess, onError, onOpenChange }) => {
 
     try {
       const res = await axios.post(
-        "https://indianssydney-backend.onrender.com/auth/google-login",
+        "https://news-portal-backend-scsp.onrender.com/auth/google-login",
         { idToken }
       );
 

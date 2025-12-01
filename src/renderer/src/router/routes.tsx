@@ -5,8 +5,11 @@ import Activity from '@renderer/pages/(tabs)/activity/Activity'
 import SignInPage from '@renderer/pages/(tabs)/auth/SignIn'
 import Dashboard from '@renderer/pages/(tabs)/dashboard/Dashboard'
 import { List } from '@renderer/pages/(tabs)/list/List'
-
 import { createBrowserRouter } from 'react-router-dom'
+import SignUp from '@renderer/pages/(tabs)/auth/SignUp'
+import ForgotPasswordModal from '@renderer/pages/(tabs)/auth/ForgotPassword'
+import ResetPasswordModal from '@renderer/pages/(tabs)/auth/RestPasswordModel'
+import VerifyOtpModal from '@renderer/pages/(tabs)/auth/VerifyOtpModel'
 
 export const router = createBrowserRouter([
   {
@@ -35,9 +38,24 @@ export const router = createBrowserRouter([
     children: [
       {
         path: 'login',
-        element: <SignInPage onSwitchToSignUp={() => {}} onSwitchToForgot={() => {}} />
+        element: <SignInPage />
+      },
+      {
+        path: 'signup',
+        element: <SignUp />
+      },
+      {
+        path: 'verify-otp',
+        element: <VerifyOtpModal />
+      },
+      {
+        path: 'forgot-password',
+        element: <ForgotPasswordModal />
+      },
+      {
+        path: 'reset-password',
+        element: <ResetPasswordModal />
       }
-      // add signup, forgot-password, etc. here
     ]
   },
   {

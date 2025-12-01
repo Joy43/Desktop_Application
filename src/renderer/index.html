@@ -7,11 +7,12 @@
     <meta
       http-equiv="Content-Security-Policy"
       content="
-    default-src 'self';
-    script-src 'self';
-    style-src 'self' 'unsafe-inline';
-    img-src * data:;
-  "
+        default-src 'self';
+        script-src 'self';
+        style-src 'self' 'unsafe-inline';
+        img-src * data:;
+        connect-src 'self' https://news-portal-backend-scsp.onrender.com;
+      "
     />
   </head>
 
