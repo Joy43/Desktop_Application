@@ -2,10 +2,26 @@ import { useState } from 'react'
 import { Menu } from 'lucide-react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { Sidebar } from './sidebar'
+import { useAppSelector } from '@renderer/redux/hook'
 
 export const Navbar = () => {
   const navigate = useNavigate()
   const location = useLocation()
+  const user = useAppSelector((state) => state?.auth?.user)
+
+  console.log(user)
+
+  // ----- controller for user/admin dashboard ---------
+  const handleUserButtonClick = () => {
+    if (user?.role === 'USER' || user?.role === 'CONTRIBUTOR') {
+      // If you have profile sheet logic, place it here
+      console.log('Open profile sheet')
+    } else if (user?.role === 'ADMIN') {
+      navigate('/editor')
+    } else if (user?.role === 'SUPER_ADMIN') {
+      navigate('/admin')
+    }
+  }
 
   const [open, setOpen] = useState(false)
 
@@ -56,8 +72,15 @@ export const Navbar = () => {
           </div>
         </div>
 
-        {/*--------  Right side blank -----------*/}
-        <div className="flex items-center"></div>
+        {/*-------- Right Side (User Button) -----------*/}
+        <div className="flex items-center">
+          <button
+            onClick={handleUserButtonClick}
+            className="text-gray-300 text-sm hover:text-white"
+          >
+            {user?.fullName || 'Profile'}
+          </button>
+        </div>
       </div>
 
       {/*----------- Sidebar Component------------- */}

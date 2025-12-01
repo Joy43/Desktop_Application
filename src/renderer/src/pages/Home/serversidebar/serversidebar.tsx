@@ -1,15 +1,20 @@
-import { Link, useLocation } from 'react-router-dom'
-import { Home, List, Layers, Settings, LogOut, LogInIcon, ActivityIcon } from 'lucide-react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Home, List, Layers, Settings, LogOut, LogInIcon, ActivityIcon, User2 } from 'lucide-react'
+import { useAppSelector } from '@renderer/redux/hook';
 
 const ServerSidebar = () => {
   const location = useLocation()
 
+  const user = useAppSelector((state) => state?.auth?.user);
+  console.log(user);
+
+
   const navItems = [
     { id: 'dashboard', icon: Home, label: 'Dashboard', path: '/' },
+    { id: 'login', icon: User2, label: 'login', path: '/auth/login' },
     { id: 'list', icon: List, label: 'List', path: '/list' },
     { id: 'layers', icon: Layers, label: 'Layers', path: '/layers' },
-    { id: 'settings', icon: Settings, label: 'Settings', path: '/settings' },
-    { id: 'login', icon: ActivityIcon, label: 'login', path: '/auth/login' }
+    { id: 'settings', icon: Settings, label: 'Settings', path: '/settings' }
   ]
 
   return (
