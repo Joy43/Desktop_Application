@@ -3,13 +3,13 @@ import { MainLayout } from '@renderer/Layout/MainLayout'
 import { AuthLayout } from '@renderer/Layout/AuthLayout'
 import Activity from '@renderer/pages/(tabs)/activity/Activity'
 import SignInPage from '@renderer/pages/(tabs)/auth/SignIn'
-import Dashboard from '@renderer/pages/(tabs)/dashboard/Dashboard'
 import { List } from '@renderer/pages/(tabs)/list/List'
 import { createBrowserRouter } from 'react-router-dom'
 import SignUp from '@renderer/pages/(tabs)/auth/SignUp'
 import ForgotPasswordModal from '@renderer/pages/(tabs)/auth/ForgotPassword'
 import ResetPasswordModal from '@renderer/pages/(tabs)/auth/RestPasswordModel'
 import VerifyOtpModal from '@renderer/pages/(tabs)/auth/VerifyOtpModel'
+import HomeContent from '@renderer/pages/Home/HomeContent/HomeContent'
 
 export const router = createBrowserRouter([
   {
@@ -19,7 +19,7 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Dashboard />
+        element: <HomeContent />
       },
       {
         path: 'activity',
@@ -29,7 +29,7 @@ export const router = createBrowserRouter([
         path: 'list',
         element: <List />
       }
-      // other protected routes here
+     
     ]
   },
   {

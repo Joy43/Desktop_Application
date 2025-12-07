@@ -7,7 +7,7 @@ if (!apiUrl) {
 }
 
 const baseQueryAPI = fetchBaseQuery({
-  baseUrl: apiUrl, // Now guaranteed to log if missing
+  baseUrl: apiUrl, 
   credentials: 'include',
   prepareHeaders(headers, { getState }) {
     const token = (getState() as RootState).auth.token
