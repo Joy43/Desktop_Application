@@ -1,5 +1,5 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { Home, List, Layers, Settings, LogOut, LogInIcon, ActivityIcon, User2 } from 'lucide-react'
+import { Link, useLocation } from 'react-router-dom'
+import { Home, List, Layers, Settings, LogOut,  User2 } from 'lucide-react'
 import { useAppSelector } from '@renderer/redux/hook';
 
 const ServerSidebar = () => {

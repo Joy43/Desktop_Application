@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useForm, Controller } from 'react-hook-form'
 import signInImg from '../../../assets/images/auth/newslogin.jpg'
 import { useDispatch } from 'react-redux'
-import { Eye, EyeOff } from 'lucide-react'
+import { ArrowBigLeft,  Eye, EyeOff } from 'lucide-react'
 import { toast } from 'sonner'
 import { useLoginMutation } from '@renderer/redux/features/auth/auth.api'
 import { setUser } from '@renderer/redux/features/auth/auth.slice'
@@ -58,7 +58,18 @@ const SignInPage = () => {
   }
 
   return (
+<div>
+
+   {/* -------- back to home button */}
+   <button
+        className="absolute top-6 left-6 text-gray-200 hover:text-blue-600 transition-colors flex items-center gap-2 text-sm font-medium"
+        onClick={() => navigate('/')}
+      >
+       <ArrowBigLeft/> Back to Home
+      </button>
     <div className="w-full min-h-screen bg-[#113146] flex justify-center items-center p-6">
+     
+      
       <div className="w-full max-w-5xl bg-[#1e3f55] p-6 shadow-lg grid md:grid-cols-12 gap-6 items-center">
         {/* Left Image */}
         <div className="hidden md:block md:col-span-7">
@@ -163,7 +174,7 @@ const SignInPage = () => {
 
           {/* Social Login */}
           <GoogleAuthButton
-            onSuccess={(result) => {
+            onSuccess={(result:any) => {
               toast.success('Logged In Successfully')
               dispatch(
                 setUser({
@@ -173,16 +184,21 @@ const SignInPage = () => {
               )
               navigate('/')
             }}
-            onError={(error) => {
+            onError={(error:any) => {
               toast.error(error?.message || 'Google login failed')
             }}
-            onOpenChange={(isOpen) => {
-              // Handle modal open/close state if needed
+            onOpenChange={(open:any) => {
+              if (!open) {
+                navigate('/')
+              }
             }}
           />
         </div>
       </div>
     </div>
+</div>
+
+
   )
 }
 

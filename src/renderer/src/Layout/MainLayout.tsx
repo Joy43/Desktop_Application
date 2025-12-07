@@ -1,5 +1,5 @@
 // Updated @renderer/Layout/MainLayout.jsx (Conceptual)
-import ServerSidebar from '@renderer/pages/Home/serversidebar/serversidebar';
+import ServerSidebar from '@renderer/pages/Home/serversidebar/sidebar';
 import { Outlet } from 'react-router-dom';
 
 

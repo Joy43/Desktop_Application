@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import signUpImg from '../../../assets/images/auth/newslogin.jpg'
 import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
-import { Eye, EyeOff } from 'lucide-react'
+import { ArrowBigLeft, Eye, EyeOff } from 'lucide-react'
 import { useRegisterMutation } from '@renderer/redux/features/auth/auth.api'
 
 type SignUpSchemaType = {
@@ -57,7 +57,14 @@ const SignUp: React.FC = () => {
   }
 
   return (
-    <div className="w-full min-h-screen bg-[#113146] flex justify-center items-center p-6">
+    <div>
+      {/* -------- back to home button */}
+      <button
+        onClick={() => navigate('/')} className="absolute top-4 left-4 bg-accent-orange text-white px-3 py-1.5 rounded-none text-sm font-medium hover:bg-[#7c2d22] transition-colors flex items-center gap-2"
+      >
+        <ArrowBigLeft size={16} /> Back to Home
+      </button>
+      <div className="w-full m bg-[#113146] flex justify-center items-center p-6">
       <div className="w-full max-w-4xl bg-[#082538] shadow-lg md:grid md:grid-cols-12 overflow-hidden">
         {/* Left Image */}
         <div className="hidden md:block md:col-span-7">
@@ -168,6 +175,7 @@ const SignUp: React.FC = () => {
           </p>
         </div>
       </div>
+    </div>
     </div>
   )
 }

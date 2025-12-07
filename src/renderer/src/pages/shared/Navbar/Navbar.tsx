@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { Menu } from 'lucide-react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { Sidebar } from './sidebar'
+
 import { useAppSelector } from '@renderer/redux/hook'
+import { NavbarSidebar } from './Navbarsidebar'
 
 export const Navbar = () => {
   const navigate = useNavigate()
@@ -84,7 +85,7 @@ export const Navbar = () => {
       </div>
 
       {/*----------- Sidebar Component------------- */}
-      <Sidebar open={open} setOpen={setOpen} />
+      <NavbarSidebar open={open} setOpen={setOpen} />
     </>
   )
 }

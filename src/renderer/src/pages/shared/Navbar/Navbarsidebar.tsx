@@ -1,7 +1,7 @@
 import { X } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
-export const Sidebar = ({ open, setOpen }) => {
+export const NavbarSidebar = ({ open, setOpen }) => {
   const navigate = useNavigate()
 
   const items = [
@@ -10,7 +10,8 @@ export const Sidebar = ({ open, setOpen }) => {
     { name: 'Images', route: '/images' },
     { name: 'Volumes', route: '/volumes' },
     { name: 'Networks', route: '/networks' },
-    { name: 'Compose', route: '/compose' }
+    { name: 'Compose', route: '/compose' },
+    { name: 'Settings', route: '/settings' }
   ]
 
   return (
@@ -23,7 +24,7 @@ export const Sidebar = ({ open, setOpen }) => {
         />
       )}
 
-      {/* Sidebar Panel - CHANGED CLASSES HERE */}
+      {/* NavbarSidebar Panel - CHANGED CLASSES HERE */}
       <div
         className={`
           fixed top-0 right-0 h-full w-64 bg-[#121212] text-white z-40 shadow-xl 

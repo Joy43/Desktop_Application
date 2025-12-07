@@ -1,4 +1,4 @@
-import { Sidebar } from '@renderer/pages/shared/Navbar/sidebar'
+import { Sidebar } from '@renderer/pages/shared/Navbar/Navbarsidebar'
 import { useAppSelector } from '@renderer/redux/hook'
 
 import { Mail, Bell, Menu } from 'lucide-react'
