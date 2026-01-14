@@ -1,7 +1,8 @@
 import { useAppSelector } from '@renderer/redux/hook'
 import { useState } from 'react'
 import HomeTopbar from './HomeTopbar'
-import ChatSection from './ChatSection'
+import ChatSection from '../../(tabs)/Settings/ChatSection'
+import HomeNews from './HomeNews'
 
 
 const HomeContent = () => {
@@ -16,7 +17,8 @@ const HomeContent = () => {
         {/*------- Header -----------------*/}
         <HomeTopbar />
         {/* Charts Section */}
-        <ChatSection/>
+        {/* <ChatSection/> */}
+        <HomeNews/>
       </div>
     </div>
   )

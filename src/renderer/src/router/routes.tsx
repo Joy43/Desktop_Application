@@ -10,6 +10,7 @@ import ForgotPasswordModal from '@renderer/pages/(tabs)/auth/ForgotPassword'
 import ResetPasswordModal from '@renderer/pages/(tabs)/auth/RestPasswordModel'
 import VerifyOtpModal from '@renderer/pages/(tabs)/auth/VerifyOtpModel'
 import HomeContent from '@renderer/pages/Home/HomeContent/HomeContent'
+import { Settings } from '@renderer/pages/(tabs)/Settings/Settings'
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
       {
         path: 'list',
         element: <List />
+      },
+      {
+        path: 'settings',
+        element:<Settings></Settings>
       }
      
     ]

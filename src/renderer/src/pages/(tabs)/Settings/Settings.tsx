@@ -1,9 +1,10 @@
+import ChatSection from "./ChatSection"
 
 
 export const Settings = () => {
   return (
        <div>
-        Settings
+        <ChatSection/>
         </div>
   )
 }

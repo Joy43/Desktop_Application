@@ -24,7 +24,7 @@ const ServerSidebar = () => {
   }
 
   return (
-    <div className="p-8">
+    <div className="p-8 py-4 mt-4">
       <div className="fixed left-8 top-10 py-6 flex flex-col gap-8 z-50">
         {/* NAVIGATION */}
         <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-4">
@@ -38,7 +38,7 @@ const ServerSidebar = () => {
                 <Link
                   key={item.id}
                   to={item.path}
-                  className={`transition-colors duration-200 ${
+                  className={`transition-colors duration-200 p-1 ${
                     isActive ? 'text-cyan-400' : 'text-slate-500 hover:text-cyan-300'
                   }`}
                   aria-label={item.label}
@@ -48,7 +48,7 @@ const ServerSidebar = () => {
               )
             })}
 
-            {/* SHOW LOGIN ICON ONLY WHEN USER IS NOT LOGGED IN */}
+            {/* ----- SHOW LOGIN ICON ONLY WHEN USER IS NOT LOGGED IN------ */}
             {!user && (
               <Link
                 to="/auth/login"
