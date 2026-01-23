@@ -1,10 +1,11 @@
-import ChatSection from "./ChatSection"
-
+import ChatSection from './ChatSection'
+// import DeviceInfo from './DeviceInfo'
 
 export const Settings = () => {
   return (
-       <div>
-        <ChatSection/>
-        </div>
+    <div>
+      <ChatSection />
+       {/* <DeviceInfo/> */}
+    </div>
   )
 }

@@ -26,10 +26,10 @@ const ServerSidebar = () => {
   return (
     <div className="p-8 py-4 mt-4">
       <div className="fixed left-8 top-10 py-6 flex flex-col gap-8 z-50">
-        {/* NAVIGATION */}
+        {/* ---------NAVIGATION------------ */}
         <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-4">
           <div className="flex flex-col gap-6">
-            {/* ALWAYS SHOW ALL ICONS */}
+            {/* ---------ALWAYS SHOW ALL ICONS------------ */}
             {navItems.map((item) => {
               const Icon = item.icon
               const isActive = location.pathname === item.path
@@ -61,7 +61,7 @@ const ServerSidebar = () => {
           </div>
         </div>
 
-        {/* LOGOUT BUTTON WHEN USER LOGGED IN */}
+        {/* ------- LOGOUT BUTTON WHEN USER LOGGED IN ------------*/}
         {user && (
           <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-4">
             <button
